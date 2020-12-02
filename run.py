@@ -3,7 +3,6 @@ import subprocess
 import configparser
 import pandas
 import datetime
-datetime.datetime.today()
 
 
 # 입력한 이름이 기존과 중복되는지 확인
