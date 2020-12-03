@@ -21,7 +21,7 @@ def check_displayname(rule):
 def crawling():
     print('https://xn--3e0bx5euxnjje69i70af08bea817g.xn--3e0b707e/jsp/statboard/IPAS/inter/sec/currentV4Addr.jsp에서 정보를 받아옵니다...')
     table = pandas.read_html(
-        'https://xn--3e0bx5euxnjje69i70af08bea817g.xn--3e0b707e/jsp/statboard/IPAS/inter/sec/currentV4Addr.jsp', flavor='bs4')
+        'https://xn--3e0bx5euxnjje69i70af08bea817g.xn--3e0b707e/jsp/statboard/IPAS/inter/sec/currentV4Addr.jsp')
     table = table[0]
 
     print('korean_ip.txt 파일을 작성 중입니다...\n')
@@ -110,5 +110,3 @@ else:
 config['global']['date'] = str(datetime.date.today())
 with open('config.ini', 'w') as configfile:
     config.write(configfile)
-
-input()
