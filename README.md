@@ -10,6 +10,24 @@ Create Inbound Rule can only allow Korea IP address in Windows Firewall
 
 - 추가된 규칙은 `config.ini`에 저장되며, 규칙 업데이트 시에 해당 파일을 참고합니다.
 
+# 윈도우
+
+[release]()에 있는 firewall-allow.exe를 다운받아 실행시키면 됩니다.
+
 - **중요!** 해당 프로그램은 powershell 명령어를 사용하여 방화벽 규칙을 추가하므로 powershell이 꼭 필요하며 powershell 경로가 환경변수에 등록되어 있어야 합니다.
+
+# 리눅스
+
+firewall-allow.sh 다운
+
+```bash
+$ sudo sh firewall-allow.sh
+```
+
+파라미터를 지정하지 않으면 모든 포트가 개방됩니다. 특정 포트만 개방하고 싶으면 첫번째 매개변수에 개방하려는 포트를 입력하세요.
+
+```bash
+$ sudo sh firewall-allow.sh 22,443,8080
+```
 
 - 아이콘 출처: [Lumicons](https://www.deviantart.com/vantler/art/Lumicons-662277185) by [vantier](https://www.deviantart.com/vantler) / [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ko)
