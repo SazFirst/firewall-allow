@@ -20,9 +20,9 @@ if [ $# -eq 0 ]; then
     COUNT=0
     for RANGE in `sed -n '2,$p' $FILE | cut -f1,2 | sed 's/\t/-/g'`
     do
-            iptables --append INPUT --match iprange --src-range $RANGE --jump ACCEPT
-            COUNT=$(($COUNT+1))
-    echo  "[ $COUNT ] : $RANGE"
+        iptables --append INPUT --match iprange --src-range $RANGE --jump ACCEPT
+        COUNT=$(($COUNT+1))
+        echo  "[ $COUNT ] : $RANGE"
     done
 else
     iptables -A INPUT --protocol tcp --match multiport --dports $1 --match iprange --src-range '127.0.0.0-127.255.255.255' --jump ACCEPT
@@ -33,7 +33,7 @@ else
     do
         iptables -A INPUT --protocol tcp --match multiport --dports $1 --match iprange --src-range $RANGE --jump ACCEPT
         COUNT=$(($COUNT+1))
-    echo  "[ $COUNT ] : $RANGE"
+        echo  "[ $COUNT ] : $RANGE"
     done
 fi
 
